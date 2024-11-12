@@ -188,7 +188,7 @@ const ServicesSection = () => {
   const getCardStyle = (index) => {
     const basePosition = 176; // 11rem in pixels
     const scrollThreshold = index * 500; // Adjust this value to control when each card appears
-
+  
     if (scrollY < scrollThreshold) {
       return {
         transform: `translateY(100%)`,
@@ -196,7 +196,17 @@ const ServicesSection = () => {
         visibility: "hidden",
       };
     }
-
+  
+    // if (scrollY >= scrollThreshold && scrollY < scrollThreshold + 500) {
+    //   return {
+    //     transform: `translateY(0)`,
+    //     opacity: 1,
+    //     visibility: "visible",
+    //     position: "relative", // Avoid sticky effect until the last moment
+    //   };
+    // }
+  
+    // Apply sticky positioning only in the final part of the scroll
     return {
       transform: `translateY(0)`,
       opacity: 1,
@@ -207,68 +217,61 @@ const ServicesSection = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-100 py-20">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col lg:flex-row gap-12">
-          {/* Conditionally Sticky Left Section */}
-          <div className="lg:w-[82%]">
-            <div className="lg:sticky top-0 lg:top-60">
-              <h2 className="text-4xl font-bold mb-6">
-                Our Range Of{" "}
-                <span className="relative">
-                  Services
-                  <span className="absolute bottom-1 left-0 w-full h-1 bg-red-500"></span>
-                </span>
-              </h2>
-              <p className="text-gray-600 mb-8">
-                We can cover a full spectrum of services that will be suited for
-                small and large organizations and businesses.
-              </p>
+    <>
+      <div className="min-h-screen bg-gray-100 py-16">
+        <div className="max-w-7xl mx-auto px-8 sm:px-6 lg:px-8">
+          <div className="flex flex-col md:flex-row gap-8 lg:gap-12">
+            {/* Conditionally Sticky Left Section */}
+            <div className="lg:w-[82%]">
+              <div className="lg:sticky top-0 lg:top-60">
+                <h2 className="text-4xl font-bold mb-6">
+                  Our Range Of{" "}
+                  <span className="relative">
+                    Services
+                    <span className="absolute bottom-1 left-0 w-full h-1 bg-red-500"></span>
+                  </span>
+                </h2>
+                <p className="text-gray-600 mb-8">
+                  We can cover a full spectrum of services that will be suited
+                  for small and large organizations and businesses.
+                </p>
+              </div>
             </div>
-          </div>
 
-          {/* Scrollable Right Section with Sticky Cards */}
-          <div className="relative space-y-10">
-            {cards.map((card, index) => (
-              <div
-                key={index}
-                className="transition-all duration-500"
-                style={getCardStyle(index)}
-              >
-                <div className="bg-white rounded-lg p-8 shadow-sm border border-gray-100 mb-10">
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-                    <div className="order-2 md:order-1">
-                      <h3 className="text-2xl font-semibold mb-4">
-                        {card.title}
-                      </h3>
-                      <p className="text-gray-600 mb-6">{card.description}</p>
-                      <button className="inline-flex items-center px-6 py-2 border-2 border-gray-900 rounded-full text-gray-900 hover:bg-gray-900 hover:text-white transition-colors">
-                        Learn More
-                      </button>
-                    </div>
+            {/* Scrollable Right Section with Sticky Cards */}
+            <div className="relative space-y-10">
+              {cards.map((card, index) => (
+                <div
+                  key={index}
+                  className="transition-all duration-500"
+                  style={getCardStyle(index)}
+                >
+                  <div className="bg-white rounded-lg p-8 shadow-sm border border-gray-100 mb-10">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                      <div className="order-2 md:order-1">
+                        <h3 className="text-2xl font-semibold mb-4">
+                          {card.title}
+                        </h3>
+                        <p className="text-gray-600 mb-14">
+                          {card.description}
+                        </p>
+                        <button className="inline-flex items-center px-6 py-2 border-2 border-gray-900 rounded-full text-gray-900 hover:bg-gray-900 hover:text-white transition-colors">
+                          Learn More
+                        </button>
+                      </div>
 
-                    <div className="order-1 md:order-2">
-                      <div className="w-full">{card.icon}</div>
+                      <div className="order-1 md:order-2">
+                        <div className="w-full">{card.icon}</div>
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </div>
       </div>
-
-      {/* Spacing elements for scroll effect */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {Array(15)
-          .fill(0)
-          .map((_, i) => (
-            <div key={i} className="h-8 text-black">
-              spacing
-            </div>
-          ))}
-      </div>
-    </div>
+    </>
   );
 };
 
