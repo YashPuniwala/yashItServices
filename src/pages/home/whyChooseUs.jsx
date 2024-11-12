@@ -1,8 +1,9 @@
 import React from "react";
-import { Code, Database, Rocket } from "lucide-react";
+import { ChevronRight, Star, Shield, Code, Database, Rocket } from "lucide-react";
 
 const WhyChooseUs = () => {
   return (
+    <>
     <div className="container mx-auto px-4 py-16 mt-8">
       <div className="flex flex-col md:flex-row items-start md:items-center justify-evenly gap-12">
         {/* Left Content */}
@@ -62,6 +63,7 @@ const WhyChooseUs = () => {
         </div>
       </div>
     </div>
+    </>
   );
 };
 
