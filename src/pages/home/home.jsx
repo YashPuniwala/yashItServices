@@ -4,6 +4,7 @@ import WhyChooseUs from './whyChooseUs'
 import Services from './services/services'
 import RecentProjects from './recentProjects/recentProjects'
 import StatsSection from '../../components/home/statsSection/statsSection'
+import Testimonials from '../../components/home/testimonials'
 
 const Home = () => {
   return (
@@ -19,6 +20,9 @@ const Home = () => {
       </section>
       <section>
         <RecentProjects />
+      </section>
+      <section>
+        <Testimonials />
       </section>
       <section>
         <StatsSection />

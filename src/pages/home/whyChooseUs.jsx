@@ -31,9 +31,10 @@ const WhyChooseUs = () => {
   };
 
   const imageVariants = {
-    hidden: { x: 200, opacity: 0 },
-    visible: { x: 0, opacity: 1, transition: { duration: 1, ease: "easeOut" } },
+    hidden: { x: 50, opacity: 0 },
+    visible: { x: 0, opacity: 1, transition: { duration: 0.6, ease: "easeInOut" } },
   };
+  
 
   return (
     <div className="container mx-auto px-4 py-10 md:py-16 mt-8">
@@ -115,6 +116,7 @@ const WhyChooseUs = () => {
               src="https://img.freepik.com/free-vector/programming-concept-illustration_114360-1351.jpg"
               alt="Developers collaborating on code review"
               className="w-full h-auto rounded-lg"
+              style={{willChange: "transform"}}
             />
           </div>
         </motion.div>

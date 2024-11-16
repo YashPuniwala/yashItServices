@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import {Link} from "react-router-dom"
 
 function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -29,21 +30,21 @@ function Navbar() {
 
       {/* Menu items */}
       <div className="hidden lg:flex space-x-6">
-        <a href="#" className="hover:text-blue-300">
-          HOME
-        </a>
-        <a href="#" className="hover:text-blue-300">
-          COMPANY
-        </a>
-        <a href="#" className="hover:text-blue-300">
-          SERVICES
-        </a>
-        <a href="#" className="hover:text-blue-300">
-          CASE STUDIES
-        </a>
-        <a href="#" className="hover:text-blue-300">
-          CONTACT
-        </a>
+        <Link href="#" className="font-normal">
+          Home
+        </Link>
+        <Link href="#" className="font-normal">
+          Company
+        </Link>
+        <Link href="#" className="font-normal">
+          Services
+        </Link>
+        <Link href="#" className="font-normal">
+          Case Studies
+        </Link>
+        <Link href="#" className="font-normal">
+          Contact
+        </Link>
       </div>
 
       {/* Search and Hamburger Menu */}

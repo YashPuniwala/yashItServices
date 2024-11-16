@@ -19,9 +19,9 @@ const Footer = () => {
             <h1 className="text-4xl sm:text-3xl md:text-[2rem] lg:text-4xl font-bold text-white mb-2 sm:mb-4">
               Yashi IT Services
             </h1>
-            <p className="text-sm sm:text-sm uppercase text-red-500 mb-2 sm:mb-4">
+            {/* <p className="text-sm sm:text-sm uppercase text-red-500 mb-2 sm:mb-4">
               Innovation • Passion • Dedication
-            </p>
+            </p> */}
             <p className="text-sm sm:text-sm leading-relaxed">
               Yashi IT Services is an established web development and design
               company that works with companies in all sectors of business. We
@@ -99,7 +99,6 @@ const Footer = () => {
                 <li>Logo Design</li>
                 <li>Brochure Design</li>
                 <li>Business Card Design</li>
-                <li>Corporate Brand Identity Design</li>
                 <li>Social Media Design</li>
               </ul>
             </div>
